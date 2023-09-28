@@ -14,7 +14,7 @@ const buttons = [
     {value: '.', type: 'symbol', size: 'normal'},
     {value: 0, type: 'number', size: 'normal'},
     {value: '/', type: 'symbol', size: 'normal'},
-    {value: 'x', type: 'symbol', size: 'normal'},
+    {value: '*', type: 'symbol', size: 'normal'},
     {value: 'RESET', type: 'reset', size: 'double'},
     {value: '=', type: 'equals', size: 'double'},
 ];

@@ -1,6 +1,6 @@
 import './Toggle.css';
 
-function Toggle({ theme }) {
+function Toggle({ theme, changeTheme }) {
     return (
         <div className={`toggle ${theme}`}>
             <ul className={`toggle--numers-of-themes-container ${theme}`}>
@@ -9,7 +9,7 @@ function Toggle({ theme }) {
                 <li>3</li>
             </ul>
 
-            <div className={`toggle--circle-container ${theme}`}>
+            <div className={`toggle--circle-container ${theme}`} onClick={changeTheme}>
                 <div className={`toggle--circle-container__circle ${theme}`}></div>
             </div>
         </div>

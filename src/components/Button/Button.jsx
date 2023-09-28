@@ -1,3 +1,5 @@
+import './Button.css'
+
 function Button({ type, value, size, onTouch, theme }) {
     return(
         <button className={`

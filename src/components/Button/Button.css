@@ -1,0 +1,40 @@
+@import url('../../variables.css');
+
+button {
+    max-width: 7rem;
+    height: 5rem;
+    border: none;
+    border-bottom: 0.3rem solid var(--grayish-orange);
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+    background-color: var(--light-grayish-orange);
+}
+button:active,
+button.deletion:active, 
+button.reset:active,
+button.equals:active {
+    border: none;
+}
+
+.btns-container--btn__double {
+    max-width: initial;
+    grid-column: span 2;
+}
+
+button.deletion, 
+button.reset {
+    border-bottom: 0.3rem solid var(--desaturated-blue-medium);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--desaturated-blue-light);
+}
+
+button.equals {
+    font-size: 1.8rem;
+    color: var(--white);
+    background-color: var(--red);
+    border-bottom: 0.3rem solid var(--dark-red);
+}

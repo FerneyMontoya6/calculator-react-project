@@ -13,11 +13,12 @@ import { useState } from "react";
 
 
 let inputValueDefault = '';
-function App() {
 
-  const [valueInput, setValueInput] = useState(inputValueDefault);
+function App() {
   const themes = ['theme-default', 'theme-white', 'theme-gamer'];
 
+  const [valueInput, setValueInput] = useState(inputValueDefault);
+  const [themeToggle, setThemeToggle] = useState(themes[0]);
 
   const buttonNumberClicked = (key) => {
     const btnValue = buttons[key].value;
@@ -40,31 +41,39 @@ function App() {
     setValueInput(inputValueDefault);
   }
   
-  const buttonEqualsClicked = (key) => {
+  const buttonEqualsClicked = () => {
     
+    const mathOperation = eval(inputValueDefault);
+    buttonResetClicked();
+    inputValueDefault = mathOperation.toString();
+    setValueInput(mathOperation);
   }
   
-  const buttonResetClicked = (key) => {
+  const buttonResetClicked = () => {
     inputValueDefault = '';
 
     setValueInput(inputValueDefault);
   }
   
-  const buttonDeletionClicked = (key) => {
+  const buttonDeletionClicked = () => {
      inputValueDefault = inputValueDefault.slice(0, -1);
     
     setValueInput(inputValueDefault);
   }
 
+  const changeTheme = () => {
+    console.log(themeToggle);
+  }
+
   return (
     <>
-      <CalcContainer theme={themes[0]}>
+      <CalcContainer theme={themeToggle}>
         
-        <CalcHeader theme={themes[0]}>
-          <Title text='calc' theme={themes[0]} />
+        <CalcHeader theme={themeToggle}>
+          <Title text='calc' theme={themeToggle} />
           <ToggleContainer>
-            <TextToggleDescription text='THEME' theme={themes[0]} />
-            <Toggle theme={themes[0]} />
+            <TextToggleDescription text='THEME' theme={themeToggle} />
+            <Toggle changeTheme={changeTheme} theme={() => themeToggle()} />
           </ToggleContainer>
         </CalcHeader>
 
