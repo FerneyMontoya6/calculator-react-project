@@ -67,7 +67,7 @@ function App() {
 
   return (
     <>
-      <CalcContainer theme={themeToggle}>
+      <CalcContainer theme={tbuttonSymbolClickedhemeToggle}>
         
         <CalcHeader theme={themeToggle}>
           <Title text='calc' theme={themeToggle} />
@@ -92,6 +92,7 @@ function App() {
                 size={button.size}
                 onTouch={() => {
                   return (
+                    // Cambiar por objeto 
                     button.type === 'number' 
                     ? buttonNumberClicked(index) 
                     : button.type === 'symbol'
@@ -102,7 +103,7 @@ function App() {
                     ? buttonResetClicked(index)
                     : button.type === 'equals'
                     ? buttonEqualsClicked(index)
-                    : 'efe'
+                    : 'kjkhfsd'
                     );
                 }}
               />
