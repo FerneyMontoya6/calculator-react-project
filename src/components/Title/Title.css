@@ -1,0 +1,6 @@
+@import url('../../variables.css');
+
+.calc-title {
+    font-weight: 800;
+    color: var(--white);
+}
