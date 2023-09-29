@@ -16,40 +16,6 @@ function App() {
   const [valueInput, setValueInput] = useState("");
   const [themeToggle, setThemeToggle] = useState(themes[0]);
 
-  const buttonNumberClicked = (key) => {
-    const btnValue = buttons[key].value;
-
-    setValueInput((prev) => prev + btnValue.toString());
-  };
-
-  const buttonSymbolClicked = (key) => {
-    const btnValue = buttons[key].value;
-    const lastChar = valueInput.charAt(valueInput.length - 1);
-
-    const symbols = ["+", "-", ".", "/", "x", "="];
-    const symbolValidation = symbols.includes(lastChar);
-
-    if (!symbolValidation) {
-      setValueInput((prev) => prev + btnValue);
-    }
-  };
-
-  const buttonEqualsClicked = () => {
-    const mathOperation = eval(valueInput);
-
-    buttonResetClicked();
-
-    setValueInput(mathOperation.toString());
-  };
-
-  const buttonResetClicked = () => {
-    setValueInput("");
-  };
-
-  const buttonDeletionClicked = () => {
-    setValueInput((prev) => prev.slice(0, -1));
-  };
-
   const changeTheme = () => {
     console.log(themeToggle);
   };
@@ -71,25 +37,13 @@ function App() {
           {buttons.map((button, index) => (
             <Button
               key={index}
+              index={index}
               type={button.type}
               value={button.value}
               size={button.size}
-              onTouch={() => {
-                return (
-                  // Cambiar por objeto
-                  button.type === "number"
-                    ? buttonNumberClicked(index)
-                    : button.type === "symbol"
-                    ? buttonSymbolClicked(index)
-                    : button.type === "deletion"
-                    ? buttonDeletionClicked(index)
-                    : button.type === "reset"
-                    ? buttonResetClicked(index)
-                    : button.type === "equals"
-                    ? buttonEqualsClicked(index)
-                    : "kjkhfsd"
-                );
-              }}
+              valueInput={valueInput}
+              setValueInput={setValueInput}
+              theme={themeToggle}
             />
           ))}
         </ButtonsContainer>

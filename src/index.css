@@ -1,27 +1,46 @@
-@import url('./variables.css');
+@import url("./variables.css");
+:root {
+  /*--------------------- Theme1 -------------------------------------*/
+  /* Backgrounds */
+  --desaturated-blue: hsl(222, 26%, 31%);
+  --dark-desaturated-blue: hsl(223, 31%, 20%);
+  --very-dark-desaturated-blue: hsl(224, 36%, 15%);
 
+  /* Keys */
+  --desaturated-blue-light: hsl(225, 21%, 49%);
+  --desaturated-blue-medium: hsl(226, 17%, 41%);
+  --red: hsl(6, 63%, 50%);
+  --dark-red: hsl(6, 70%, 34%);
+  --light-grayish-orange: hsl(30, 25%, 89%);
+  --grayish-orange: hsl(28, 16%, 65%);
+
+  /* Text */
+  --very-dark-grayish-blue: hsl(226, 30%, 32%);
+  --white: hsl(0, 0%, 100%);
+
+  /*--------------------- Theme2 -------------------------------------*/
+}
 /* Agregar variables globales en lugar de importar en cada .css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
-    font-family: 'League Spartan', sans-serif;
+  font-size: 62.5%;
+  font-family: "League Spartan", sans-serif;
 }
 
 body {
-    height: 100vh;
-    margin-top: 3rem;
-    display: grid;
-    place-items: center;
-    font-size: 1.6rem;
-    background-color: var(--desaturated-blue);
+  height: 100vh;
+  margin-top: 3rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  background-color: var(--desaturated-blue);
 }
 
 #root {
-    width: 100%;
+  width: 100%;
 }
-
