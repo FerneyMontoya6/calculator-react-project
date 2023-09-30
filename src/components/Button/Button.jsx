@@ -59,7 +59,7 @@ function Button({
                 ${type}
                 ${theme}
             `}
-      onClick={() => buttonNumberClicked(index, setValueInput)}
+      onClick={() => {}}
     >
       {value}
     </button>

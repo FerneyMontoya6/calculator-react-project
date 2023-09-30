@@ -16,18 +16,22 @@ function App() {
   const [valueInput, setValueInput] = useState("");
   const [themeToggle, setThemeToggle] = useState(themes[0]);
 
-  const changeTheme = () => {
-    console.log(themeToggle);
+  const bodyThemes = {
+    "theme-default": "hsl(222, 26%, 31%)",
+    "theme-white": "hsl(0, 0%, 90%)",
+    "theme-gamer": "hsl(268, 75%, 9%)",
   };
+  document.querySelector("body").style.backgroundColor =
+    bodyThemes[themeToggle];
 
   return (
     <>
       <CalcContainer theme={themeToggle}>
-        <CalcHeader theme={themeToggle}>
-          <Title text="calc" theme={themeToggle} />
+        <CalcHeader>
+          <Title text="calc" />
           <ToggleContainer>
-            <TextToggleDescription text="THEME" theme={themeToggle} />
-            <Toggle changeTheme={changeTheme} theme={() => themeToggle()} />
+            <TextToggleDescription text="THEME" />
+            <Toggle themeToggle={themeToggle} setThemeToggle={setThemeToggle} />
           </ToggleContainer>
         </CalcHeader>
 
@@ -43,7 +47,6 @@ function App() {
               size={button.size}
               valueInput={valueInput}
               setValueInput={setValueInput}
-              theme={themeToggle}
             />
           ))}
         </ButtonsContainer>

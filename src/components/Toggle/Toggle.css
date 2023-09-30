@@ -1,34 +1,52 @@
-@import url('../../variables.css');
-
-
 .toggle {
 }
 
 .toggle--circle-container {
-    position: relative;
-    width: 7.5rem;
-    height: 2.5rem;
-    border-radius: 2rem;
-    display: flex;
-    background-color: var(--dark-desaturated-blue);
+  position: relative;
+  width: 7.5rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  display: flex;
+  background-color: var(--dark-desaturated-blue);
 }
 
 .toggle--numers-of-themes-container {
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--white);
-    list-style: none;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  list-style: none;
 }
 
-.toggle--circle-container__circle {
-    position: absolute;
-    top: 0.4rem;
-    left: 0.5rem;
-    width: 1.7rem;
-    height: 1.7rem;
-    border-radius: 50%;
-    background-color: var(--red);
+.toggle--circle-container__circle.theme-default {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.5rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: var(--red);
+  transition: all 0.3s ease;
+}
+.toggle--circle-container__circle.theme-white {
+  position: absolute;
+  top: 0.4rem;
+  transition: all 0.3s ease;
+  transform: translateX(2.7rem);
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: var(--red);
+}
+.toggle--circle-container__circle.theme-gamer {
+  position: absolute;
+  top: 0.4rem;
+  transition: all 0.3s ease;
+  transform: translateX(5.4rem);
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: var(--red);
 }

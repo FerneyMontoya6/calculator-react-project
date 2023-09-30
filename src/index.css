@@ -1,6 +1,4 @@
-@import url("./variables.css");
-:root {
-  /*--------------------- Theme1 -------------------------------------*/
+.calc-container.theme-default {
   /* Backgrounds */
   --desaturated-blue: hsl(222, 26%, 31%);
   --dark-desaturated-blue: hsl(223, 31%, 20%);
@@ -17,10 +15,42 @@
   /* Text */
   --very-dark-grayish-blue: hsl(226, 30%, 32%);
   --white: hsl(0, 0%, 100%);
-
-  /*--------------------- Theme2 -------------------------------------*/
 }
-/* Agregar variables globales en lugar de importar en cada .css */
+
+.calc-container.theme-white {
+  --desaturated-blue: hsl(0, 0%, 90%);
+  --dark-desaturated-blue: hsl(0, 5%, 81%);
+  --very-dark-desaturated-blue: hsl(0, 0%, 93%);
+  --desaturated-blue-light: rgb(26, 161, 158);
+  --desaturated-blue-medium: hsl(35, 11%, 61%);
+
+  --red: hsl(25, 98%, 40%);
+  --dark-red: hsl(25, 99%, 27%);
+
+  --light-grayish-orange: hsl(30, 25%, 89%);
+  --grayish-orange: hsl(28, 16%, 65%);
+
+  --very-dark-grayish-blue: hsl(60, 10%, 19%);
+  --white: hsl(60, 10%, 19%);
+}
+
+.calc-container.theme-gamer {
+  --desaturated-blue: hsl(268, 75%, 9%);
+  --dark-desaturated-blue: hsl(268, 71%, 12%);
+  --very-dark-desaturated-blue: hsl(268, 71%, 12%);
+  --desaturated-blue-light: hsl(268, 47%, 21%);
+  --desaturated-blue-medium: hsl(290, 70%, 36%);
+
+  --red: hsl(176, 100%, 44%);
+  --dark-red: hsl(177, 92%, 70%);
+
+  --light-grayish-orange: hsl(281, 89%, 26%);
+  --grayish-orange: hsl(285, 91%, 52%);
+
+  --very-dark-grayish-blue: hsl(52, 100%, 62%);
+  --white: white;
+}
+
 * {
   margin: 0;
   padding: 0;
