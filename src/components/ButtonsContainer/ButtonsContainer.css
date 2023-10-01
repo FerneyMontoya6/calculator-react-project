@@ -1,12 +1,10 @@
-@import url('../../variables.css');
-
 .buttons-container {
-    width: 100%;
-    padding: 2rem;
-    border-radius: 1rem;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    background-color: var(--dark-desaturated-blue);
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: var(--dark-desaturated-blue);
 }

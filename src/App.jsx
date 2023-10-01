@@ -10,66 +10,28 @@ import { Input } from "./components/Input/Input";
 import { ButtonsContainer } from "./components/ButtonsContainer/ButtonsContainer";
 import { useState } from "react";
 
-let inputValueDefault = "";
-
 function App() {
   const themes = ["theme-default", "theme-white", "theme-gamer"];
 
-  const [valueInput, setValueInput] = useState(inputValueDefault);
+  const [valueInput, setValueInput] = useState("");
   const [themeToggle, setThemeToggle] = useState(themes[0]);
 
-  const buttonNumberClicked = (key) => {
-    const btnValue = buttons[key].value;
-    inputValueDefault += btnValue;
-
-    setValueInput(inputValueDefault);
+  const bodyThemes = {
+    "theme-default": "hsl(222, 26%, 31%)",
+    "theme-white": "hsl(0, 0%, 90%)",
+    "theme-gamer": "hsl(268, 75%, 9%)",
   };
-
-  const buttonSymbolClicked = (key) => {
-    const btnValue = buttons[key].value;
-    const lastChar = inputValueDefault.charAt(inputValueDefault.length - 1);
-
-    const symbols = ["+", "-", ".", "/", "x", "="];
-    const symbolValidation = symbols.includes(lastChar);
-
-    if (!symbolValidation) {
-      inputValueDefault += btnValue;
-    }
-
-    setValueInput(inputValueDefault);
-  };
-
-  const buttonEqualsClicked = () => {
-    const mathOperation = eval(inputValueDefault);
-    buttonResetClicked();
-    inputValueDefault = mathOperation.toString();
-    setValueInput(mathOperation);
-  };
-
-  const buttonResetClicked = () => {
-    inputValueDefault = "";
-
-    setValueInput(inputValueDefault);
-  };
-
-  const buttonDeletionClicked = () => {
-    inputValueDefault = inputValueDefault.slice(0, -1);
-
-    setValueInput(inputValueDefault);
-  };
-
-  const changeTheme = () => {
-    console.log(themeToggle);
-  };
+  document.querySelector("body").style.backgroundColor =
+    bodyThemes[themeToggle];
 
   return (
     <>
       <CalcContainer theme={themeToggle}>
-        <CalcHeader theme={themeToggle}>
-          <Title text="calc" theme={themeToggle} />
+        <CalcHeader>
+          <Title text="calc" />
           <ToggleContainer>
-            <TextToggleDescription text="THEME" theme={themeToggle} />
-            <Toggle changeTheme={changeTheme} theme={() => themeToggle()} />
+            <TextToggleDescription text="THEME" />
+            <Toggle themeToggle={themeToggle} setThemeToggle={setThemeToggle} />
           </ToggleContainer>
         </CalcHeader>
 
@@ -79,25 +41,12 @@ function App() {
           {buttons.map((button, index) => (
             <Button
               key={index}
+              index={index}
               type={button.type}
               value={button.value}
               size={button.size}
-              onTouch={() => {
-                return (
-                  // Cambiar por objeto
-                  button.type === "number"
-                    ? buttonNumberClicked(index)
-                    : button.type === "symbol"
-                    ? buttonSymbolClicked(index)
-                    : button.type === "deletion"
-                    ? buttonDeletionClicked(index)
-                    : button.type === "reset"
-                    ? buttonResetClicked(index)
-                    : button.type === "equals"
-                    ? buttonEqualsClicked(index)
-                    : "kjkhfsd"
-                );
-              }}
+              valueInput={valueInput}
+              setValueInput={setValueInput}
             />
           ))}
         </ButtonsContainer>
