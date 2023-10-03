@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'https://ferneymontoya6.github.io/calculator-react-project/',
+  base: '/calculator-react-project/',
 })
